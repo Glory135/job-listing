@@ -1,0 +1,30 @@
+$primary: hsl(180, 29%, 50%);
+$secondary: hsl(180, 31%, 95%);
+$tertiary: hsl(180, 14%, 20%);
+$text: hsl(180, 8%, 52%);
+$bg: hsl(180, 52%, 96%);
+$base-font-size: 15px;
+
+$shadow: 1px 3px 20px rgba(70, 106, 107, 0.1);
+
+@mixin position($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// hover Effects
+@mixin hover-1($color: white, $size: 5px) {
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: block;
+    background-color: $color;
+    height: $size;
+    width: 0;
+  }
+  &:hover::after {
+    width: 100%;
+    transition: 0.5s;
+  }
+}

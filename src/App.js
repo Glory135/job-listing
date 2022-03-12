@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { FilterBar } from "./components/FilterBar";
+import { Jobs } from "./components/Jobs";
+
+export const CatContext = React.createContext();
 
 function App() {
+  const [cats, setCats] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CatContext.Provider value={{ cats, setCats }}>
+      <main>
+        <header>
+          <FilterBar />
+        </header>
+        <section className='body'>
+          <div className='jobs-container'>
+            <Jobs />
+          </div>
+        </section>
+        <div className='attribution'>
+          Challenge by{" "}
+          <a
+            href='https://www.frontendmentor.io?ref=challenge'
+            rel='noreferrer'
+            target='_blank'
+          >
+            Frontend Mentor
+          </a>
+          . Coded by{" "}
+          <a
+            rel='noreferrer'
+            target='_blank'
+            href='https://www.frontendmentor.io/profile/Glory135'
+          >
+            Glory
+          </a>
+          .
+        </div>
+      </main>
+    </CatContext.Provider>
   );
 }
 

@@ -1,0 +1,22 @@
+& header {
+  @include position;
+  position: relative;
+  height: 25vh;
+  width: 100%;
+  background-color: $primary;
+  background-image: url(./images/bg-header-desktop.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include sm {
+    background-image: url(./images/bg-header-mobile.svg);
+  }
+}
+& .body {
+  @include position(_, center);
+  width: 100%;
+  height: auto;
+  min-height: 75vh;
+  background-color: $bg;
+  @import "./jobs";
+}
