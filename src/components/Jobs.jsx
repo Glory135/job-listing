@@ -24,7 +24,7 @@ export const Jobs = () => {
     } else {
       setData([...all]);
     }
-  }, [cats]);
+  }, [cats, data]);
 
   return (
     <div className='jobs'>
